@@ -17,4 +17,5 @@ module SpreeMailchimpEcommerce
     end
   end
 end
-Spree::CheckoutController.prepend(SpreeMailchimpEcommerce::Spree::CheckoutControllerDecorator)
+
+Spree::CheckoutController.prepend(SpreeMailchimpEcommerce::Spree::CheckoutControllerDecorator) if Spree::Core::Engine.frontend_available?
